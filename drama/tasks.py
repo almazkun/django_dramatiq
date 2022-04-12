@@ -9,7 +9,7 @@ def add(x, y):
 
 @dramatiq.actor
 def create_user(username, email, password):
-    user = User.objects.create_user(username=username, email=email, password=password)
+    User.objects.create_user(username=username, email=email, password=password)
 
 
 @dramatiq.actor

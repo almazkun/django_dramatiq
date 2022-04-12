@@ -33,7 +33,7 @@ class EmailUpdateView(View):
 class CreateUserView(View):
     def post(self, request):
         data = json.loads(request.body.decode("utf-8"))
-        username = data.get("username")
+        username = data.get("username") + "_" + str(User.objects.count())
         email = data.get("email")
         password = data.get("password")
         result = create_user.send(username, email, password)
