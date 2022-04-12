@@ -1,3 +1,11 @@
+# Dramatiq Django
+
+User guide:
+https://dramatiq.io/guide.html
+
+
+
+
 # django_template
 This is a django started template
 

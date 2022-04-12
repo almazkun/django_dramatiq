@@ -16,8 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.shortcuts import render
 from django.urls import path
+from drama.views import TaskView, EmailUpdateView, ListUsersView, CreateUserView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", lambda request: render(request, "home.html"), name="home"),
+    path("", TaskView.as_view(), name="home"),
+    path("user/", CreateUserView.as_view(), name="user"),
+    path("email/", EmailUpdateView.as_view(), name="email"),
+    path("users/", ListUsersView.as_view(), name="users"),
 ]
